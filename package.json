@@ -1,0 +1,33 @@
+{
+  "name": "censor-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --project ./tsconfig.json",
+    "build:docs": "typedoc",
+    "dist": "npm run build && copyfiles ./.*rc ./package.json ./dist/",
+    "start": "npm run dist && node --experimental-fetch --experimental-specifier-resolution=node ./dist/index.js"
+  },
+  "keywords": [
+    "censor",
+    "proxy",
+    "beta"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.5.9",
+    "copyfiles": "^2.4.1",
+    "typescript": "^4.5.5"
+  },
+  "author": "ssj17vegeta",
+  "license": "ISC",
+  "dependencies": {
+    "@silveredgold/beta-censor-client": "^0.0.0-alpha16",
+    "harmon": "^1.4.4",
+    "http-proxy": "^1.18.1",
+    "http-proxy-response-rewrite": "^0.0.1"
+  }
+}
